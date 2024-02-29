@@ -26,6 +26,10 @@ pip install -e .
 I use `python=3.8.5` to run all of the experiments. If you encounter errors of python version conflict, you can try run MCQ in python3.8 environment.
 
 ## How to run
+For running all of the tests, use the following command.
+```
+bash examples/run_experiments.sh
+```
 
 For MuJoCo tasks, we conduct experiments on d4rl MuJoCo "-v2" datasets by calling
 ```
