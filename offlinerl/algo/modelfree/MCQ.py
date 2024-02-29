@@ -224,6 +224,7 @@ class AlgoTrainer(BaseAlgo):
         
     def _train(self, batch, tblogger):
         self._current_epoch += 1
+        print("current_epoch: ", self._current_epoch)
         batch = to_torch(batch, torch.float, device=self.args["device"])
         rewards = batch.rew
         terminals = batch.done
