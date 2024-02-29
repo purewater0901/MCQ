@@ -74,7 +74,6 @@ class OnlineCallBackFunction(CallBackFunction):
 
     def __call__(self, policy, epoch, mean, std) -> dict:
         assert self.is_initialized, "`initialize` should be called before callback."
-        policy = deepcopy(policy).cpu()
         eval_res = OrderedDict()
         eval_res.update(test_on_real_env(self.task, epoch, d4rl_score, policy, mean, std, self.env, number_of_runs=self.number_of_runs))
         return eval_res

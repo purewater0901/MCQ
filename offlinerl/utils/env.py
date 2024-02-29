@@ -7,9 +7,8 @@ from typing import Tuple
 def get_env(task : str, seed = 25) -> gym.Env:
     try:
         if task.startswith('d4rl'):
-            import d4rl
             env = gym.make(task[5:])
-            env.seed(seed + 100)
+            env.reset(seed=seed)
             # hack to add terminal function 
             if 'hopper' in task:
                 def terminal_function(data : dict):

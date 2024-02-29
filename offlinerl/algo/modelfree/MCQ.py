@@ -443,9 +443,8 @@ class AlgoTrainer(BaseAlgo):
                 mean = self.mean
                 std = self.std
             
-            res = callback_fn(self.get_policy(), epoch, mean, std)
-            
             if epoch % 5 == 0:
+                res = callback_fn(self.get_policy(), epoch, mean, std)
 
                 self.log_res(epoch, res)
 
