@@ -1,0 +1,6 @@
+logs/
+offlinerl.egg-info/
+**/__pycache__/
+tmp/
+result_logs/
+wandb/
