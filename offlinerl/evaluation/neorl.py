@@ -3,7 +3,7 @@ from collections import OrderedDict
 
 from offlinerl.utils.env import get_env
 
-def test_one_trail(env, policy, mean, std, epoch, number_of_runs=10):
+def test_one_trail(env, policy, mean, std, epoch, number_of_runs=100):
 
     lengths = []
     avg_reward = 0.
@@ -25,7 +25,7 @@ def test_one_trail(env, policy, mean, std, epoch, number_of_runs=10):
     
     return (avg_reward, d4rl_score, ave_length)
 
-def test_on_real_env(task, epoch, scorer, policy, mean, std, env, number_of_runs=10):
+def test_on_real_env(task, epoch, scorer, policy, mean, std, env, number_of_runs=100):
     rewards, d4rl_score, episode_lengths = test_one_trail(env, policy, mean, std, epoch, number_of_runs)
 
     res = OrderedDict()

@@ -16,7 +16,7 @@ def d4rl_score(task, rew_mean):
     return score
 
 
-def d4rl_eval_fn(task, eval_episodes=10):
+def d4rl_eval_fn(task, eval_episodes=100):
     env = get_env(task)
     
     def d4rl_eval(policy):

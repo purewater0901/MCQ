@@ -1,0 +1,5 @@
+Metadata-Version: 2.1
+Name: offlinerl
+Version: 0.0.1
+Summary: A Library for Offline RL (Batch RL)
+Requires-Python: >=3.7
