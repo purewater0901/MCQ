@@ -12,6 +12,12 @@ def load_d4rl_buffer(task):
     env = gym.make(task[5:])
     dataset = d4rl.qlearning_dataset(env)
 
+    if "antmaze" in task:
+        print("change reward scale")
+        rewards = dataset['rewards']
+        rewards = (rewards - 2.0) * 2.0
+        dataset['rewards'] = rewards
+
     buffer = SampleBatch(
         obs=dataset['observations'],
         obs_next=dataset['next_observations'],
