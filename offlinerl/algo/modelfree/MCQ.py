@@ -219,7 +219,7 @@ class AlgoTrainer(BaseAlgo):
             preds = network(obs_repeat, repeat_actions)
             preds = preds.reshape(self.num, obs.shape[0], 1)
             preds = torch.max(preds, dim=0)[0]
-            preds = preds.clamp(min=0).repeat((self.num,1,1)).reshape(-1,1)
+            preds = preds.clamp(min=-1000).repeat((self.num,1,1)).reshape(-1,1)
         return preds, repeat_actions.view(self.num, self.args["batch_size"], -1)
         
     def _train(self, batch, tblogger):
